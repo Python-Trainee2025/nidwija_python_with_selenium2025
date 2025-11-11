@@ -1,0 +1,14 @@
+create repo and clone in your local directory
+open repo in pycharm
+
+create requirements.txt:
+    selenium==4.38.0
+    pytest==8.3.4
+    webdriver-manager==3.8.5
+since python version + selenium version is the latest no need for bin/chromedriver.exe or chrome
+
+python -m virtualenv venv
+venv\Scripts\activate
+pip install -r install/requirements.txt
+
+then go to interpreter settings and set up the existing python and then select the python inside the venv you setup
