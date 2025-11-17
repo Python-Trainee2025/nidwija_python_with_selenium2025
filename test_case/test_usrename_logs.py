@@ -24,15 +24,21 @@ class TestLogs:
         driver.get("https://www.saucedemo.com/")
 
         user_list=driver.find_elements(By.XPATH,'//div[@id="login_credentials"]')
-        time.sleep(2)
+        time.sleep(3)
         accepted_user=[]
         for i in user_list:
             logger.info(f"{i.text}")
             accepted_user.append(i.text)
+            time.sleep(2)
         logging.info(accepted_user)
-        raw_text=accepted_user[0]
+
+        if not accepted_user:
+            logger.warning("No login credentials found on the page.")
+            return  # or raise an exception if needed
+
+        raw_text = accepted_user[0]
         logging.info(f"{raw_text}")
-        new_text=raw_text.split("\n")
+        new_text = raw_text.split("\n")
         logging.info(f"{new_text}")
-        final=new_text[1:]
+        final = new_text[1:]
         logging.info(f"{final}")
