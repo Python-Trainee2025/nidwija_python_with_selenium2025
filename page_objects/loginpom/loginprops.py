@@ -1,4 +1,4 @@
-from Page_objects.loginpom.loginlocators import LoginLocators
+from page_objects.loginpom.loginlocators import LoginLocators
 
 
 

@@ -1,4 +1,4 @@
-from Page_objects.loginpom.loginprops import LoginPageProperties
+from page_objects.loginpom.loginprops import LoginPageProperties
 
 
 class LoginPage(LoginPageProperties):
