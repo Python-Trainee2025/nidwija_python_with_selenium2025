@@ -9,6 +9,15 @@ from selenium.webdriver.support import expected_conditions as ec
 
 def test_demo_basic():
     chrome_options=Options()
+    chrome_options.add_argument("guest")
+    prefs = {
+
+        "credentials_enable_service": False,
+        "profile.password_manager_enabled": False,
+        "profile.password_manager_leak_detection_enabled": False
+
+    }
+    chrome_options.add_experimental_option("prefs", prefs)
 
     driver=webdriver.Chrome(options=chrome_options)
 

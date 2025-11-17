@@ -1,0 +1,7 @@
+{
+  "base_url": "https://www.saucedemo.com/",
+  "st_user": "standard_user",
+  "st_pass": "secret_sauce",
+  "users": {"standard_user": "secret_sauce","locked_out": "secret_sauce"}
+
+}

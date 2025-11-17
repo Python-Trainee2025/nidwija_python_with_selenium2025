@@ -5,7 +5,7 @@ class LoginPage(LoginPageProperties):
     def __init__(self, driver):
         self.driver = driver
 
-    def login(self, username, pwd):
+    def login(self, username):
         self.username_input.send_keys(username)
         self.username_input.click()
 
