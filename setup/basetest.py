@@ -1,3 +1,4 @@
+import json
 import logging
 
 from selenium import webdriver
@@ -27,6 +28,11 @@ class BaseTest:
         driver = webdriver.Chrome(options=chrome_options)
         self.driver = driver
         self.driver.maximize_window()
+        # Load credentials
+        creds_path = r"D:\Users\nidwija.bhatta\Documents\PYTHON\2025trainee\nidwija_python_with_selenium2025\creds\creds.json"
+
+        with open(creds_path, "r") as f:
+            self.creds = json.load(f)
 
     def teardown_method(self):
         self.driver.quit()

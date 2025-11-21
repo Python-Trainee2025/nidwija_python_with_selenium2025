@@ -12,6 +12,7 @@ class TestLoginPom(BaseTest):
     def test_demo_login_basetest_pom(self):
         login=LoginPage(self.driver)
 
+
         self.driver.get("https://www.saucedemo.com/")
         time.sleep(3)
         print("Page Title: ", self.driver.title)
