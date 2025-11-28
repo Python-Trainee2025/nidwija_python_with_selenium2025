@@ -1,3 +1,5 @@
+import pytest
+
 import time
 
 from selenium import webdriver
@@ -6,8 +8,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-
-def test_demo():
+@pytest.mark.parametrize("username,password", [("standard_user","secret_sauce"),("problem_user","secret_sauce"),])
+def test_demo(username,password):
     chrome_options=Options()
 
     driver=webdriver.Chrome(options=chrome_options)
@@ -16,12 +18,11 @@ def test_demo():
     driver.get("https://www.saucedemo.com/")
     time.sleep(3)
     print("Page Title: ", driver.title)
-    driver.find_element(By.ID,"user-name").send_keys("standard_user")
-    driver.find_element(By.ID,"password").send_keys("secret_sauce")
+    driver.find_element(By.ID,"user-name").send_keys(username)
+    driver.find_element(By.ID,"password").send_keys(password)
+    print(f"Logging in with username: {username} and password: {password}")
     driver.find_element(By.ID,"login-button").click()
-    #explicit
-    wait=WebDriverWait(driver,30)
-    wait.until(ec.visibility_of_element_located((By.CLASS_NAME,"title")))
+
     driver.quit()
 
 

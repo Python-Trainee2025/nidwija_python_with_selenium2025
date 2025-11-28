@@ -12,3 +12,6 @@ venv\Scripts\activate
 pip install -r install/requirements.txt
 
 then go to interpreter settings and set up the existing python and then select the python inside the venv you setup
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s: %(message)s')
+logger = logging.getLogger(__name__)
